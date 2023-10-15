@@ -1,1 +1,1 @@
-# SampleMultipagePHPWebsite
+# Sample Multipage PHP Website
