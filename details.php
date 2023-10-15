@@ -1,3 +1,8 @@
+<?php
+  require "classes/db.php";
+  
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -8,7 +13,7 @@
 
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 
-    <title>Cyborg - Awesome HTML5 Template</title>
+    <title>Cyborg</title>
 
     <!-- Bootstrap core CSS -->
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -50,11 +55,11 @@ https://templatemo.com/tm-579-cyborg-gaming
               <div class="feature-banner header-text">
                 <div class="row">
                   <div class="col-lg-4">
-                    <img src="assets/images/feature-left.jpg" alt="" style="border-radius: 23px;">
+                    <img src="assets/images/fortnite-feature-left.jpg" alt="" style="border-radius: 23px;">
                   </div>
                   <div class="col-lg-8">
                     <div class="thumb">
-                      <img src="assets/images/feature-right.jpg" alt="" style="border-radius: 23px;">
+                      <img src="assets/images/fortnite-feature-right.jpg" alt="" style="border-radius: 23px;">
                       <a href="https://www.youtube.com/watch?v=r1b03uKWk_M" target="_blank"><i class="fa fa-play"></i></a>
                     </div>
                   </div>
@@ -96,13 +101,13 @@ https://templatemo.com/tm-579-cyborg-gaming
                       </div>
                     </div>
                     <div class="col-lg-4">
-                      <img src="assets/images/details-01.jpg" alt="" style="border-radius: 23px; margin-bottom: 30px;">
+                      <img src="assets/images/fortnite-example-01.jpg" alt="" style="border-radius: 23px; margin-bottom: 30px;">
                     </div>
                     <div class="col-lg-4">
-                      <img src="assets/images/details-02.jpg" alt="" style="border-radius: 23px; margin-bottom: 30px;">
+                      <img src="assets/images/fortnite-example-02.jpg" alt="" style="border-radius: 23px; margin-bottom: 30px;">
                     </div>
                     <div class="col-lg-4">
-                      <img src="assets/images/details-03.jpg" alt="" style="border-radius: 23px; margin-bottom: 30px;">
+                      <img src="assets/images/fortnite-example-03.jpg" alt="" style="border-radius: 23px; margin-bottom: 30px;">
                     </div>
                     <div class="col-lg-12">
                       <p>Cyborg Gaming is free HTML CSS website template provided by TemplateMo. This is Bootstrap v5.2.0 layout. You can make a <a href="https://paypal.me/templatemo" target="_blank">small contribution via PayPal</a> to info [at] templatemo.com and thank you for supporting. If you want to get the PSD source files, please contact us. Lorem ipsum dolor sit consectetur es dispic dipiscingei elit, sed doers eiusmod lisum hored tempor.</p>
@@ -196,17 +201,9 @@ https://templatemo.com/tm-579-cyborg-gaming
     </div>
   </div>
   
-  <footer>
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-12">
-          <p>Copyright © 2036 <a href="#">Cyborg Gaming</a> Company. All rights reserved. 
-          
-          <br>Design: <a href="https://templatemo.com" target="_blank" title="free CSS templates">TemplateMo</a></p>
-        </div>
-      </div>
-    </div>
-  </footer>
+  <?php
+    require "footer.php"
+  ?>
 
 
   <!-- Scripts -->

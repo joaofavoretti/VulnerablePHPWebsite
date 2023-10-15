@@ -4,18 +4,22 @@ function generateNavigationMenu() {
     'index.php' => 'Home',
     'browse.php' => 'Browse',
     'details.php' => 'Details',
-    'streams.php' => 'Streams',
-    'profile.php' => 'Profile'
+    'streams.php' => 'Streams'
   );
 
   $currentPage = basename($_SERVER['PHP_SELF']);
   
+  // Regular Icons Display
   echo '<ul class="nav">';
   foreach ($pages as $url => $title) {
     $activeClass = ($currentPage == $url) ? 'class="active"' : '';
-    echo "<script>console.log('$activeClass');</script>";
     echo "<li><a href=\"$url\" $activeClass>$title</a></li>";
   }
+
+  // Profile Icon Display
+  $activeClass = ($currentPage == "profile.php") ? 'class="active"' : '';
+  echo "<li><a href=\"profile.php\" $activeClass>Profile <img src='assets/images/profile-header.jpg' alt=''></a></li>";
+
   echo '</ul>';
 }
 
