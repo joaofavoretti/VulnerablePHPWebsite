@@ -167,16 +167,19 @@ class Detail {
                         <h4><em>Other Related</em> Games</h4>
                       </div>
                     </div>
-                    <div class="col-lg-6">
-                      <div class="item">
-                        <img src="assets/images/fortnite-feature-left.jpg" alt="" class="templatemo-item">
-                        <h4><a href="/details.php?game_name=fortnite">Fortnite</a></h4><span>Sandbox</span>
-                        <ul>
-                          <li><i class="fa fa-star"></i> 4.8</li>
-                          <li><i class="fa fa-download"></i> 2.3M</li>
-                        </ul>
+                    <?php if ($detail->game_name != "fortnite"): ?>
+                      <div class="col-lg-6">
+                        <div class="item">
+                          <img src="assets/images/fortnite-feature-left.jpg" alt="" class="templatemo-item">
+                          <h4><a href="/details.php?game_name=fortnite">Fortnite</a></h4><span>Sandbox</span>
+                          <ul>
+                            <li><i class="fa fa-star"></i> 4.8</li>
+                            <li><i class="fa fa-download"></i> 2.3M</li>
+                          </ul>
+                        </div>
                       </div>
-                    </div>
+                    <?php endif; ?>
+                    <?php if ($detail->game_name != "pubg"): ?>
                     <div class="col-lg-6">
                       <div class="item">
                         <img src="assets/images/pubg-feature-left.jpg" alt="" class="templatemo-item">
@@ -187,6 +190,8 @@ class Detail {
                         </ul>
                       </div>
                     </div>
+                    <?php endif; ?>
+                    <?php if ($detail->game_name != "minecraft"): ?>
                     <div class="col-lg-6">
                       <div class="item">
                         <img src="assets/images/game-03.jpg" alt="" class="templatemo-item">
@@ -197,9 +202,7 @@ class Detail {
                         </ul>
                       </div>
                     </div>
-                    
-                    
-                    
+                    <?php endif; ?>
                   </div>
                 </div>
                 <!-- ***** Other End ***** -->
