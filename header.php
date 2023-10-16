@@ -7,13 +7,18 @@ function generateNavigationMenu() {
     'streams.php' => 'Streams'
   );
 
+  $params = array(
+    'details.php' => 'game_name=fortnite'
+  );
+
   $currentPage = basename($_SERVER['PHP_SELF']);
   
   // Regular Icons Display
   echo '<ul class="nav">';
   foreach ($pages as $url => $title) {
     $activeClass = ($currentPage == $url) ? 'class="active"' : '';
-    echo "<li><a href=\"$url\" $activeClass>$title</a></li>";
+    $param = isset($params[$url]) ? '?' . $params[$url] : '';
+    echo "<li><a href=\"$url$param\" $activeClass>$title</a></li>";
   }
 
   // Profile Icon Display
