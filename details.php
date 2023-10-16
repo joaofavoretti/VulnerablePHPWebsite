@@ -32,7 +32,7 @@
 
   <?php require "header.php" ?>
 
-  <?php Detail::render($_GET["game_name"]) ?>
+  <?php Detail::render($_GET["game"]) ?>
   
   <?php require "footer.php" ?>
 

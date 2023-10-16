@@ -8,7 +8,7 @@ function generateNavigationMenu() {
   );
 
   $params = array(
-    'details.php' => 'game_name=fortnite'
+    'details.php' => 'game=1'
   );
 
   $currentPage = basename($_SERVER['PHP_SELF']);

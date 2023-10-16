@@ -152,8 +152,11 @@ p {
 }
 
 .templatemo-item {
-	max-width: 80px; 
+	height: 80px; 
+  width: 80px;
 	border-radius: 23px;
+  object-fit: cover;
+  object-position: center;
 }
 
 .main-button a {

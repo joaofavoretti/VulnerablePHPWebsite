@@ -2,16 +2,16 @@
 require "db.php";
 
 class Detail {
-    public $game_name, $game_genre, $image_feature_left, $image_feature_right, $youtube_video_url, $game_description, $game_stars, $game_downloads, $game_size, $game_type, $image_example_1, $image_example_2, $image_example_3;
+    public $game_id, $game_name, $game_genre, $image_feature_left, $image_feature_right, $youtube_video_url, $game_description, $game_stars, $game_downloads, $game_size, $game_type, $image_example_1, $image_example_2, $image_example_3;
 
-    function __construct($game_name) {
-        $this->game_name = $game_name;
-        
+    function __construct($game_id) {
+        $this->game_id = $game_id;
     }
 
-    static function getDetails($game_name) {
+    static function getDetails($game_id) {
 
-        $sql = "SELECT * FROM details WHERE game_name = '$game_name'";
+        $sql = "SELECT * FROM details WHERE id = " . $game_id;
+
         $results = mysql_query($sql);
 
         if ($results) {
@@ -21,8 +21,9 @@ class Detail {
                 return null;
             }
 
-            $detail = new Detail($game_name);
-
+            $detail = new Detail($game_id);
+            
+            $detail->game_name = $row['game_name'];
             $detail->game_genre = $row['game_genre'];
             $detail->image_feature_left = $row['image_feature_left'];
             $detail->image_feature_right = $row['image_feature_right'];
@@ -44,8 +45,8 @@ class Detail {
         return null;
     }
 
-    static function render($game_name) {
-        $detail = Detail::getDetails($game_name);
+    static function render($game_id) {
+        $detail = Detail::getDetails($game_id);
         Detail::renderDetail($detail);
     }
 
@@ -167,11 +168,11 @@ class Detail {
                         <h4><em>Other Related</em> Games</h4>
                       </div>
                     </div>
-                    <?php if ($detail->game_name != "fortnite"): ?>
+                    <?php if ($detail->game_id != "1"): ?>
                       <div class="col-lg-6">
                         <div class="item">
                           <img src="assets/images/fortnite-feature-left.jpg" alt="" class="templatemo-item">
-                          <h4><a href="/details.php?game_name=fortnite">Fortnite</a></h4><span>Sandbox</span>
+                          <h4><a href="/details.php?game=1">Fortnite</a></h4><span>Sandbox</span>
                           <ul>
                             <li><i class="fa fa-star"></i> 4.8</li>
                             <li><i class="fa fa-download"></i> 2.3M</li>
@@ -179,11 +180,11 @@ class Detail {
                         </div>
                       </div>
                     <?php endif; ?>
-                    <?php if ($detail->game_name != "pubg"): ?>
+                    <?php if ($detail->game_id != '2'): ?>
                     <div class="col-lg-6">
                       <div class="item">
                         <img src="assets/images/pubg-feature-left.jpg" alt="" class="templatemo-item">
-                        <h4><a href="/details.php?game_name=pubg">PUBG</a></h4><span>Battle Royale</span>
+                        <h4><a href="/details.php?game=2">PUBG</a></h4><span>Battle Royale</span>
                         <ul>
                           <li><i class="fa fa-star"></i> 4.5</li>
                           <li><i class="fa fa-download"></i> 1.2M</li>
@@ -191,11 +192,11 @@ class Detail {
                       </div>
                     </div>
                     <?php endif; ?>
-                    <?php if ($detail->game_name != "minecraft"): ?>
+                    <?php if ($detail->game_id != '3'): ?>
                     <div class="col-lg-6">
                       <div class="item">
-                        <img src="assets/images/game-03.jpg" alt="" class="templatemo-item">
-                        <h4><a href="/details.php?game_name=minecraft">Minecraft</a></h4><span>Sandbox</span>
+                        <img src="assets/images/minecraft-feature-left.jpg" alt="" class="templatemo-item">
+                        <h4><a href="/details.php?game=3">Minecraft</a></h4><span>Sandbox</span>
                         <ul>
                           <li><i class="fa fa-star"></i> 4.9</li>
                           <li><i class="fa fa-download"></i> 1.5M</li>
