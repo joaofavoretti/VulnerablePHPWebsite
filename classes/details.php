@@ -261,14 +261,19 @@ class Detail {
   }
 
   static function renderSimpleDetail($detail) {
-
     ob_start();
     ?>
-
-    <div>
-      <a href="/details.php?game=<?php echo $detail->game_id ?>"><?php echo $detail->game_name ?></a>
+    <div style="display: flex; align-items: center; margin-bottom: 20px;">
+      <img src="../assets/images/<?php echo $detail->image_feature_left ?>" alt="<?php echo $detail->game_name ?>" style="width: 100px; height: 100px; margin-right: 20px;">
+      <div>
+        <h3 style="margin: 0;"><a href="/details.php?game=<?php echo $detail->game_id ?>"><?php echo $detail->game_name ?></a></h3>
+        <p style="margin: 0;"><?php echo $detail->game_genre ?></p>
+        <ul style="display: flex; list-style: none; padding: 0; margin: 0;">
+          <li style="margin-right: 10px;"><i class="fa fa-star"></i> <?php echo $detail->game_stars ?></li>
+          <li><i class="fa fa-download"></i> <?php echo $detail->game_downloads ?></li>
+        </ul>
+      </div>
     </div>
-
     <?php
     $html = ob_get_clean();
 
