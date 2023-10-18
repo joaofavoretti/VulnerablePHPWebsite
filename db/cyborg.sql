@@ -1,3 +1,4 @@
+-- details table
 CREATE TABLE `details` (
   `id` mediumint(9) NOT NULL AUTO_INCREMENT,
   `game_name` varchar(32) DEFAULT NULL,
@@ -20,12 +21,25 @@ INSERT INTO `details` VALUES (1,'fortnite','Sandbox','fortnite-feature-left.jpg'
 INSERT INTO `details` VALUES (2,'pubg','Battle Royale','pubg-feature-left.jpg','pubg-feature-right.png', 'https://www.youtube.com/watch?v=3b0_uPm_ggs', '<p>PlayerUnknowns Battlegrounds (PUBG) is an online multiplayer battle royale game developed and published by PUBG Corporation, a subsidiary of South Korean video game company Bluehole. The game is based on previous mods that were created by Brendan "PlayerUnknown" Greene for other games using the film Battle Royale for inspiration, and expanded into a standalone game under Greenes creative direction. In the game, up to one hundred players parachute onto an island and scavenge for weapons and equipment to kill others while avoiding getting killed themselves. The available safe area of the games map decreases in size over time, directing surviving players into tighter areas to force encounters. The last player or team standing wins the round.</p>', '4.5', '1.2M', '36GB', 'Action', 'pubg-example-1.jpg', 'pubg-example-2.jpg', 'pubg-example-3.jpg');
 INSERT INTO `details` VALUES (3,'minecraft','Sandbox','minecraft-feature-left.jpg','minecraft-feature-right.jpg', 'https://youtu.be/0HLplffQrJk?feature=shared&t=1373', '<p>Minecraft is a sandbox video game created and designed by Swedish game designer Markus "Notch" Persson, and later fully developed and published by Mojang. The creative and building aspects of Minecraft allow players to build with a variety of different cubes in a 3D procedurally generated world. Other activities in the game include exploration, resource gathering, crafting, and combat. Multiple gameplay modes are available, including a survival mode where the player must acquire resources to build the world and maintain health, a creative mode where players have unlimited resources to build with and the ability to fly, an adventure mode where players can play custom maps created by other players, and a spectator mode where players can fly around and clip through blocks, but cannot place or destroy any. The PC version of the game is noted for its modding scene, where a dedicated community creates new gameplay mechanics, items, and assets for the game.</p>', '4.9', '1.5M', '5GB', 'Action', 'minecraft-example-1.jpg', 'minecraft-example-2.jpg', 'minecraft-example-3.jpg');
 
+-- users table
 CREATE TABLE `users` (
   `id` mediumint(9) NOT NULL AUTO_INCREMENT,
-  `username` varchar(32) DEFAULT NULL,
+  `login` varchar(32) DEFAULT NULL,
   `password` varchar(32) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
 
 INSERT INTO `users` VALUES (1,'admin','827ccb0eea8a706c4c34a16891f84e7b');
-INSERT INTO `users` VALUES (2,'user','81dc9bdb52d04dc20036dbd8313ed055');
+
+-- pictures table
+CREATE TABLE `pictures` (
+  `id` mediumint(9) NOT NULL AUTO_INCREMENT,
+  `title` varchar(50) DEFAULT NULL,
+  `img` varchar(50) DEFAULT NULL,
+  `cat` mediumint(9) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=9 DEFAULT CHARSET=latin1;
+
+INSERT INTO pictures VALUES('7','estatua','dsc_0699-min.jpg','1');
+INSERT INTO pictures VALUES('4','predios','1490906279.jpg','2');
+INSERT INTO pictures VALUES('6','foguete','north-korea-science-technology.jpg','3');
